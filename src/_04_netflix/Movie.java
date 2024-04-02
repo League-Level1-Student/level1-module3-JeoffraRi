@@ -42,13 +42,18 @@ public class Movie implements Comparable<Movie> {
 	 * @return The ticket price based on star rating
 	 */
 	public String getTicketPrice() {
-		if (this.stars > 2) {
-			return "That will be $12 please.";
-		} else if (this.title.contains("Twilight")) {
-			return "This movie is so bad, we'll pay YOU to watch it!";
-		} else {
+		if (this.stars > 2 && this.stars < 4) {
+			return "$15.99";
+		} else if (this.stars > 4) {
+			return "$29.99";
+		} else if (this.stars < 2){
 			return "Don't waste your money on this horrible rubbish.";
+		} else if (this.stars == 2) {
+			return "$12";
+		} else if (this.stars == 4) {
+			return "$20";
 		}
+			return "";
 	}
 
 	/**
