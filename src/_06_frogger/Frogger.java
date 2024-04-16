@@ -15,7 +15,7 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
-    	
+    	Car carOne = new Car(400, 550, 20, 30);
     }
 
     @Override
@@ -23,7 +23,21 @@ public class Frogger extends PApplet {
     	background(100,100,100);
     	fill(0, 100, 0);
     	ellipse(x, y, 50, 50);
+    	if(x<0) {
+    		x = 780;
+    	}else if(x>800) {
+    		x = 20;
+    	}else if(y<0) {
+    		y = 580;
+    	}else if(y>600) {
+    		y = 550;
+    	}
+    	
+    	fill(255,135,0);
+        rect(x , y,  100, 50);
+    	
     }
+    
     public void keyPressed()
     {
         if(key == CODED){
