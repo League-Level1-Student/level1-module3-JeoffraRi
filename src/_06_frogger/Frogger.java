@@ -45,7 +45,7 @@ public class Frogger extends PApplet {
         rect(carThree.x, carThree.y, 100, 50);
         
         carOne.x+=5;
-        if(carOne.x>830) {
+        if(carOgne.x>830) {
         	carOne.x=-30;
         }
         carTwo.x-=5;
