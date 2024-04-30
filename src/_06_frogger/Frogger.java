@@ -23,9 +23,21 @@ public class Frogger extends PApplet {
     carTwo = new Car(600, 200, 20, 30);
     carThree = new Car(400, 100, 20, 30);
     }
-
+    
+    boolean intersects(Car car) {
+   	 if ((y > car.getY() && y < car.getY()+50) &&
+   	                (x > car.getX() && x < car.getX()+car.getSize())) {
+   	   return true;
+   	  }
+   	
+   	 else  {
+   	  return false;
+   	 }
+    }
+    
     @Override
     public void draw() {
+    
     	background(100,100,100);
     	fill(0, 100, 0);
     	ellipse(x, y, 40, 40);
@@ -45,7 +57,7 @@ public class Frogger extends PApplet {
         rect(carThree.x, carThree.y, 100, 50);
         
         carOne.x+=5;
-        if(carOgne.x>830) {
+        if(carOne.x>830) {
         	carOne.x=-30;
         }
         carTwo.x-=5;
@@ -56,7 +68,10 @@ public class Frogger extends PApplet {
         if(carThree.x>830) {
         	carThree.x=-30;
         }
+        intersects(carOne);
     }
+    
+ 
     
     public void keyPressed()
     {
