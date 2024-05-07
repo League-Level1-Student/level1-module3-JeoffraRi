@@ -9,9 +9,23 @@ public class Frogger extends PApplet {
     int y = 550;
     int carX = 150;
     int carY = 270;
+    int difficulty = 30;
+    //CHOOSE YOUR OWN DIFFICULTY
+    //RUBRIC:
+    
+    // 5: Beginner
+    // 8: Medium
+    // 10: Hard
+    // 15: Expert
+    // 20: What the-
+    // 25: HOW ARE YOU DOING THIS
+    // 30: *faints*
+    
     Car carOne;
     Car carTwo;
     Car carThree;
+    Car carFour;
+    Car carFive;
     @Override
     public void settings() {
         size(800, 600);
@@ -19,13 +33,15 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
-    carOne = new Car(200, 300, 20, 30);
-    carTwo = new Car(600, 200, 20, 30);
-    carThree = new Car(400, 100, 20, 30);
+    carOne = new Car(200, 350, 20, 30);
+    carTwo = new Car(600, 250, 20, 30);
+    carThree = new Car(400, 150, 20, 30);
+    carFour = new Car(200, 450, 20, 30);
+    carFive = new Car(600, 50, 20, 30);
     }
     
     boolean intersects(Car car) {
-   	 if ((y > car.getY() && y < car.getY()+50) &&
+   	 if ((y > car.getY() && y < car.getY()+70) &&
    	                (x > car.getX() && x < car.getX()+car.getSize())) {
    	   return true;
    	  }
@@ -55,20 +71,50 @@ public class Frogger extends PApplet {
         rect(carOne.x, carOne.y,  100, 50);
         rect(carTwo.x, carTwo.y,  100, 50);
         rect(carThree.x, carThree.y, 100, 50);
+        rect(carFour.x, carFour.y, 100, 50);
+        rect(carFive.x, carFive.y, 100, 50);
         
-        carOne.x+=5;
+        carOne.x+=difficulty;
         if(carOne.x>830) {
         	carOne.x=-30;
         }
-        carTwo.x-=5;
+        carTwo.x-=difficulty;
         if(carTwo.x<-30) {
         	carTwo.x=830;
         }
-        carThree.x+=5;
+        carThree.x+=difficulty;
         if(carThree.x>830) {
         	carThree.x=-30;
         }
-        intersects(carOne);
+        carFour.x-=difficulty;
+        if(carFour.x<-30) {
+        	carFour.x=830;
+        }
+        carFive.x-=difficulty;
+        if(carFive.x<-30) {
+        	carFive.x=830;
+        }
+
+        if(intersects(carOne)) {
+        	x = 400;
+        	y = 550;
+        }
+        if(intersects(carTwo)) {
+        	x = 400;
+        	y = 550;
+        }
+       if(intersects(carThree)) {
+    	   x = 400;
+    	   y = 550;
+       }
+       if(intersects(carFour)) {
+    	   x = 400;
+    	   y = 550;
+       }
+       if(intersects(carFive)) {
+    	   x = 400;
+    	   y = 550;
+       }
     }
     
  
