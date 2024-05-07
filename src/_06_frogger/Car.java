@@ -20,5 +20,14 @@ void display()
   fill(0,255,0);
   rect(x , y,  100, 50);
 }
+public int getY() {
+	return this.y;
+}
+public int getX() {
+	return this.x;
+}
+public int getSize() {
+	return this.size;
+}
 }
  
