@@ -9,7 +9,7 @@ public class Frogger extends PApplet {
     int y = 550;
     int carX = 150;
     int carY = 270;
-    int difficulty = 30;
+    int difficulty = 70;
     //CHOOSE YOUR OWN DIFFICULTY
     //RUBRIC:
     
@@ -17,9 +17,10 @@ public class Frogger extends PApplet {
     // 8: Medium
     // 10: Hard
     // 15: Expert
-    // 20: What the-
+    // 20: Insane
     // 25: HOW ARE YOU DOING THIS
     // 30: *faints*
+    // 70: Speedrun if you dare
     
     Car carOne;
     Car carTwo;
